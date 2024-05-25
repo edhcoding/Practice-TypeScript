@@ -6,6 +6,8 @@
     "strict": true,
     "moduleDetection": "force",
     "allowJs": true, // TS에서 JS사용하려면 허용 시켜줘야함
+    // "noImplicitAny": true // 암시적 any형식을 포함하겠습니까?
+    // 기본 true, false 하면 타입 추론을 끄는거임, 오류를 끄는거기 때문에 안전하게 손 안대는게 좋긴함
   },
   "include": ["src"]
 }
