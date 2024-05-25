@@ -4,7 +4,8 @@
     "module": "ESNext",
     "outDir": "dist",
     "strict": true,
-    "moduleDetection": "force"
+    "moduleDetection": "force",
+    "allowJs": true, // TS에서 JS사용하려면 허용 시켜줘야함
   },
   "include": ["src"]
 }
