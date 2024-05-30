@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Editor from "./components/Editor";
-import { Todo } from "./Types";
+import { Todo } from "./types";
 import TodoItem from "./components/TodoItem";
 
 function App() {
@@ -22,6 +22,10 @@ function App() {
     ]);
   };
 
+  const onClickDelete = (id: number) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   useEffect(() => {
     console.log(todos);
   }, [todos]);
@@ -34,7 +38,7 @@ function App() {
       {/* </Editor> */}
       <div>
         {todos.map((todos) => (
-          <TodoItem key={todos.id} {...todos} />
+          <TodoItem key={todos.id} {...todos} onClickDelete={onClickDelete} />
         ))}
       </div>
     </div>
