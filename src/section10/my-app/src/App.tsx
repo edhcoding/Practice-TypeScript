@@ -1,11 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Editor from "./components/Editor";
-
-interface Todo {
-  id: number;
-  content: string;
-}
+import { Todo } from "./Types";
+import TodoItem from "./components/TodoItem";
 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -33,8 +30,13 @@ function App() {
     <div className="App">
       <h1>Todo</h1>
       <Editor onClickAdd={onClickAdd} />
-        {/* <div>hi</div> 만약에 children을 사용할거면 children props를 따로 정의해줘야함 */}
+      {/* <div>hi</div> 만약에 children을 사용할거면 children props를 따로 정의해줘야함 */}
       {/* </Editor> */}
+      <div>
+        {todos.map((todos) => (
+          <TodoItem key={todos.id} {...todos} />
+        ))}
+      </div>
     </div>
   );
 }
