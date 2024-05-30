@@ -1,29 +1,54 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useReducer, useRef } from "react";
 import "./App.css";
 import Editor from "./components/Editor";
 import { Todo } from "./types";
 import TodoItem from "./components/TodoItem";
 
-function App() {
-  const [todos, setTodos] = useState<Todo[]>([]);
+type Action =
+  | {
+      type: "CREATE";
+      data: {
+        id: number;
+        content: string;
+      };
+    }
+  | { type: "DELETE"; id: number };
 
-  // useState의 초기값에 따라 state변수와 state변화 함수의 타입을 자동으로 추론해줌 - 제네릭 함수
-  // 아무것도 안넣으면 기본값 undefined - 따라서 비워두면 안되는데 만약에 비워두려면 타입변수 작성 useState<string>() - 하지만 이것도 비추천임
+function reducer(state: Todo[], action: Action) {
+  // reducer 함수는 state, action 2개의 매개변수를 받음
+  switch (action.type) {
+    case "CREATE": {
+      return [...state, action.data];
+    }
+    case "DELETE": {
+      return state.filter((it) => action.id !== it.id);
+    }
+  }
+}
+
+function App() {
+  const [todos, dispatch] = useReducer(reducer, []);
+  // useReducer는 첫번째 인수로는 reducer라는 상태 변화를 직접 처리하는 함수를 받았고 두번째로는 이런 상태의 초기값을 받음
+  // setTodos가 아니라 dispatch로 변경
 
   const idRef = useRef(0);
 
   const onClickAdd = (text: string) => {
-    setTodos([
-      ...todos,
-      {
+    dispatch({
+      type: "CREATE",
+      data: {
         id: idRef.current++,
         content: text,
       },
-    ]);
+    });
+    // dispatch는 액션객체를 인수로 전달했으니까
   };
 
   const onClickDelete = (id: number) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    dispatch({
+      type: "DELETE",
+      id: id,
+    });
   };
 
   useEffect(() => {
