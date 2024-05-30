@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TodoDispatchContext, useTodoDispatch } from "../App";
+import { useTodoDispatch } from "../App";
 
 interface Props {}
 
