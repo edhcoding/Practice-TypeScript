@@ -46,7 +46,7 @@ let union3: Union1 = {
 // 두 타입이 모두 공통으로 갖는 프로퍼티만 넣으면 오류나옴
 // let union4: Union1 = {
 //   name: ""
-// }
+// };
 
 /**
  * 2. 교집합 타입 - Intersection Type

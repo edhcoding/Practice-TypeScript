@@ -13,4 +13,4 @@
 let num1: number = 10;
 let num2: 10 = 10;
 num1 = num2; // 서브에서 슈퍼 타입으로 가능
-// num2 = num1 은 부가능
+// num2 = num1 은 불가능
