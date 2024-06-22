@@ -39,6 +39,7 @@ d.toUpperCase();
 const num = 10;
 const str = "hello";
 
+
 let arr = [1, "hello"];
 
 // 이렇게 const 말고 let을 사용해 number를 추론하는게 더 다양한 숫자를 쓸 수 있음
