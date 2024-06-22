@@ -27,7 +27,7 @@ function func3(): never {
 }
 
 // JS는 프로그램 실행 중에 throw new Error(); 에러를 던져줄 수 있음
-// 이런 함수의 경우에도 실행되면 바로 프로그램이 중지될 거기 때문에 반환 값 타입으로 never 정의
+// 이런 함수의 경우에도 실행되면 바로 프로그램이 중지될 거기 때문에 반환 값 타입으로 never 정의
 function func4(): never {
   throw new Error();
 }

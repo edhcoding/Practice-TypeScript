@@ -8,6 +8,13 @@ let user: {
   name: "은동혁",
 };
 
+let user2: {
+  id?: number;
+  name: string;
+} = {
+  name: "은동혁",
+};
+
 let dog: {
   name: string;
   color: string;
@@ -17,7 +24,8 @@ let dog: {
 };
 
 let config: {
-  readonly apiKey: string;
+  readonly apiKey: string; 
+  // 읽기 전용 프로퍼티 수정 불가능함 (의도치 않은 변경으로 인해 생기는 오류 방지)
 } = {
   apiKey: "MY API KEY",
 };
