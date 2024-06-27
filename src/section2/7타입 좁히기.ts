@@ -36,7 +36,7 @@ function func2(value: number | string | Date | null | Person) {
   } else if (typeof value === "string") {
     console.log(value.toUpperCase());
   } else if (value instanceof Date) {
-    // typeof value === "object" 이렇게 사용하면 좋지않음
+    // typeof value === "object" 이렇게 사용하면 좋지않음 (오류는 안남)
     // value: number | string | Date | null까지 들어오면 바로 오류나옴
     // 자바스크립트의 typeof에다가 null 값을 넣어도 똑같이 object 반환하기 때문임
     // 이럴때 instanceof 를 사용하면됨

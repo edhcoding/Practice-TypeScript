@@ -84,7 +84,6 @@ type SuccessTask = {
   };
 };
 
-type AsyncTask = LoadingTask | FailedTask | SuccessTask;
 // {
 //   // state: string; 이거 보다는
 //   state: "LOADING" | "FAILED" | "SUCCESS";
@@ -95,6 +94,7 @@ type AsyncTask = LoadingTask | FailedTask | SuccessTask;
 //     data: string;
 //   };
 // };
+type AsyncTask = LoadingTask | FailedTask | SuccessTask;
 
 // 로딩중 => 콘솔에 로딩중 출력
 // 실패 => 실패: 에러메시지를 출력
