@@ -54,6 +54,7 @@ const employee = new Employee("은동혁", 26, "developer");
 employee.name = "홍길동";
 employee.age = 26;
 employee.position = "FrontEnd developer";
+
 /** private
  * private를 설정해주면 Employee 클래스 외부에서는 점 표기법으로 접근 불가능함
  * 내부에서만 사용가능, 읽을수도 없음(readonly는 읽을 수는 있음)
