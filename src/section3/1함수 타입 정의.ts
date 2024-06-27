@@ -5,8 +5,12 @@
 // 함수를 설명하는 가장 좋은 방법
 // 어떤 매개변수를 받고, 어떤 결과값을 반환하는지 이야기
 // 어떤 [타입의] 매개변수를 받고, 어떤 [타입의] 결과를 반환하는지 이야기
+// 지금 상황에서는 리턴문의 타입은 어짜피 초기값을 기준으로 타입추론하기 때문에 없애도 상관없음
 function func(a: number, b: number): number {
-  // 리턴문의 타입은 어짜피 초기값을 기준으로 타입추론하기 때문에 없애도 상관없음 지금 상황에서는
+  return a + b;
+}
+
+function func2(a: number, b: number) {
   return a + b;
 }
 
@@ -15,6 +19,8 @@ function func(a: number, b: number): number {
  */
 
 const add = (a: number, b: number): number => a + b;
+
+const add2 = (a: number, b: number) => a + b;
 
 /**
  * 함수의 매개변수
